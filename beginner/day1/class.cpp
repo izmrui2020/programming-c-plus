@@ -1,43 +1,35 @@
-//
-#include <iostream>
 #include <string>
+#include <iostream>
 
-using namespace std;
-
-class CSample
+class Animal
 {
-private:
-    int id;
-    string name;
-    int age;
-
 public:
-    void sum_age();
-    string full_name();
+    std::string name;
+
+    std::string get_name();
+    void set_name(std::string new_name);
+
+private:
+    int age;
 };
 
-void CSample::sum_age()
+std::string Animal::get_name()
 {
-    name = "I am strong";
+    return name;
 }
 
-string CSample::full_name()
+void Animal::set_name(std::string new_name)
 {
-    string res;
-
-    res = "Iam ////";
-
-    return res;
+    name = new_name;
 }
 
-int main()
+int main(void)
 {
-    CSample instance1;
+    Animal neko;
 
-    string res;
-    res = instance1.full_name();
+    neko.set_name("hgoehgoe");
 
-    cout << res << endl;
+    std::cout << "name: " << neko.get_name() << std::endl;
 
     return 0;
 }
